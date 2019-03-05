@@ -20,40 +20,186 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style>
+			.reveal pre code{
+				width : 100%;
+				height: 100%;
+			}
+			.reveal pre {
+				box-shadow: none;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
 					<h1>React Redux workshop</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h3>The important bits</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
+						<small>By <a href="https://github.com/mikepro">Michael Watson</a></small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Agenda</h2>
-					<p>
-						
-					</p>
+					<h2>React Agenda</h2>
+					<ul>
+						<li>React</li>
+						<ul>
+							<li>Introduction</li>
+							<li>Virtual dom</li>
+							<li>Creating a functional component</li>
+							<li>Using JSX</li>
+							<li>Using properties</li>
+							<li>Stateful components</li>
+							<li>Event handling</li>
+							<li>Break</li>
+						</ul>
+					</ul>
+				</section>
+				<section>
+					<h2>Redux agenda</h2>
+					<ul>
+						<li>Redux</li>
+						<li>
+							<ul>
+								<li>Intro</li>
+								<li>Redux concepts(Actions, Reducer, Store)</li>
+								<li>Example todo app</li>
+								<li>Connecting react and redux together</li>
+							</ul>
+						</li>
+						<li>Break</li>
+					</ul>
+				</section>
+				<section>
+					<h2>React router</h2>
+					<ul>
+						<li>React router</li>
+						<li>
+							<ul>
+								<li>Concepts</li>
+								<li>Browser router</li>
+								<li>Link</li>
+								<li>Route</li>
+							</ul>
+						</li>
+						<li>Questions</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Clone the repo</h2>
-					<p>
-						
-					</p>
+					<pre>
+					<code>
+git checkout https://github.com/mikepro/react-training
+
+
+git checkout tags/begin
+git checkout tags/end
+npm install
+
+					</code>
+					</pre>
+				</section>
+				<section>
+					<h2>The format</h2>
+					<pre>
+						<code>
++ Presentation
+- Examples
+--+ Example 1
+--+ Example 2
+- Exercises
+--+ Exercise 1
+--+ Exercise 2
+						</code>
+					</pre>
 				</section>
 				<section>
 					<h2>I am not an expert</h2>
 					<p>
-						
+						React in action
+					</p>
+					<p>
+						<img width="300" src="https://images.manning.com/720/960/resize/book/4/dbe54e5-e0a2-43f0-a122-7d3ce329535c/Thomas-React-HI.png" style="height:65%"/>
+					</p>
+					<p>
+						<small><a href="https://www.amazon.co.uk/React-Action-Mark-Tielens-Thomas/dp/1617293857/ref=sr_1_1?ie=UTF8&qid=1551736307&sr=8-1&keywords=react+in+action">https://www.amazon.co.uk/React-Action-Mark-Tielens-Thomas/dp/1617293857/ref=sr_1_1?ie=UTF8&qid=1551736307&sr=8-1&keywords=react+in+action</a></small>
 					</p>
 				</section>
 				<section>
 					<h2>What is react</h2>
 					<p>
 						<h1>M<u>V</u>C</h1>
+					</p>
+				</section>
+				<section>
+					<ul>
+						<li>Declarative</li>
+						<li>Component-Based</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Liabries in react</h2>
+					<ul>
+						<li>react</li>
+						<li>react-dom</li>
+					</ul>
+				</section>
+				<section>
+					<h2>react</h2>
+					<ul>
+						<li>used for constructing components</li>
+						<li>will build a virtual dom</li>
+					</ul>
+				</section>
+				<section>
+					<h2>react-dom</h2>
+					<ul>
+						<li>render the virtual dom to the browser dom</li>
+						<li>generate a diff.  Only render what has changed to the browser</li>
+					</ul>
+				</section>
+				<section>
+					<h2>The react api</h2>
+					<pre>
+						<code>
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+let MyComponet = ()=> {
+	return React.createElement('htmlElement',properties,children)
+};
+
+ReactDOM.render(&lt;react_function_or_class/&gt;, dom-element);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h1>Lets see an example</h1>
+				</section>
+				<section>
+					<h2>Over to you</h2>
+					<p>
+						Exercise 1
+						<ul>
+							<li>Try to create the h1 example you have just seen</li>
+							<li>Create a component that renders an unorderd list eg:
+								<pre>
+										<code>
+<ul>
+	<li>Item 1</li>
+	<li>Item 2</li>
+</ul>
+										</code>
+									</pre>
+							</li>
+							<li>
+								
+							</li>
+						</ul>
+
 					</p>
 				</section>
 			</div>
@@ -67,6 +213,8 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				width: '100%',
+				height: '100%',
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
