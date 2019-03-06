@@ -93,10 +93,6 @@
 					<pre>
 					<code>
 git checkout https://github.com/mikepro/react-training
-
-
-git checkout tags/start
-git checkout tags/end
 					</code>
 					</pre>
 				</section>
@@ -255,7 +251,7 @@ ReactDOM.render(&lt;SayHello name="Michael"/&gt;, document.getElementById('root'
 					</pre>
 				</section>
 				<section>
-					<h2>Do an example with class and prop</h2>
+					<h2>Create your own component and inject properties (exericse3)</h2>
 				</section>
 				<section>
 					<h2>State (Example 5)</h2>
@@ -283,7 +279,11 @@ class SayHello extends React.Component
 					</pre>
 				</section>
 				<section>
-					<h2>Exercise with state</h2>
+					<h2>Extend the state example you have just seen (Exercise 4)</h2>
+					<ul>
+						<li>Add a surname field</li>
+						<li>Add a age field</li>
+					</ul>
 				</section>
 				<section>
 					<h1>Break</h1>
@@ -356,9 +356,11 @@ store.dispatch(action2(parm1,parm2));
 					<h2>Lets look at an actual example (Redux-Example1 )</h2>
 				</section>
 				<section>
-					<h2>Redux exercise</h2>
-					<p>Add actions and reducers to remove and update items</p>
-					<p>Values can all be hard coded no ui</p>
+					<h2>Redux exercise (redux-exercise1)</h2>
+					<ul>
+						<li>Extend the example to make use of the removePerson action</li>
+						<li>add a new action and reducer to edit a person</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Connecting redux to React</h2>
@@ -388,6 +390,11 @@ export default connect(mapStateToPropsFunction, mapDispatchToProps)(ConnectedCom
 					</section>
 					<section>
 						<h2>Extend this application</h2>
+						<ul>
+							<li>Add the ability to edit a person</li>
+							<li>Add the ability to remove a person</li>
+							<li>Add the ability to filter people</li>
+						</ul>
 					</section>
 					<section>
 						<h1>Break</h1>
