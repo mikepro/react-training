@@ -95,10 +95,8 @@
 git checkout https://github.com/mikepro/react-training
 
 
-git checkout tags/begin
+git checkout tags/start
 git checkout tags/end
-npm install
-
 					</code>
 					</pre>
 				</section>
@@ -172,7 +170,7 @@ let MyComponet = ()=> {
 	return React.createElement('htmlElement',properties,children)
 };
 
-ReactDOM.render(&lt;react_function_or_class/&gt;, dom-element);
+ReactDOM.render(react_function_or_class, dom-element);
 						</code>
 					</pre>
 				</section>
@@ -195,13 +193,208 @@ ReactDOM.render(&lt;react_function_or_class/&gt;, dom-element);
 										</code>
 									</pre>
 							</li>
-							<li>
-								
-							</li>
 						</ul>
-
 					</p>
 				</section>
+				<section>
+					<h2>Exericise 1 how did you get on</h2>
+				</section>
+				<section>
+					<h2>Meet JSX</h2>
+					<pre>
+						<code>
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+let MyComponet = ()=>{
+	return <h1>Hello from react</h1>
+}
+
+ReactDOM.render(&lt;MyComponet/&gt;, document.getElementById('root'));
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Exercise 2 use JSX</h2>
+					<ul>
+						<li>Rewrite the unorderd list you just created in JSX</li>
+					</ul>
+				</section>
+				<section>
+					<h2>React components (Example 3)</h2>
+					<pre>
+						<code>
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class SayHello extends React.Component
+{
+	render () {
+		return <h1>Hello from my component using a class</h1>
+	}
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>React Properties (Example 4)</h2>
+					<pre>
+						<code>
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class SayHello extends React.Component
+{
+	render () {
+		return <h1>Hello {this.props.name}from my component using a class</h1>
+	}
+}
+
+ReactDOM.render(&lt;SayHello name="Michael"/&gt;, document.getElementById('root'));
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Do an example with class and prop</h2>
+				</section>
+				<section>
+					<h2>State (Example 5)</h2>
+					<pre>
+						<code>
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class SayHello extends React.Component
+{
+	constructor(props){
+		super(props);
+		this.state = {name:"Michael"};
+		this.myMethod = this.myMethod.bind(this);
+	}
+
+	myMethod(){
+		this.setState({name:"frank"})
+	}
+	render () {
+		return <h1>Hello {this.state.name}from my component using a class</h1>
+	}
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Exercise with state</h2>
+				</section>
+				<section>
+					<h1>Break</h1>
+				</section>
+				<section>
+					<h2>What is redux</h2>
+					<ul>
+						<li>State mangment</li>
+						<li>Updating state in response to actions</li>
+					</ul>
+				</section>
+				<section>
+						<h2>Concepts in redux</h2>
+						<ul>
+							<li>Actions</li>
+							<li>Reducer</li>
+							<li>Store</li>
+						</ul>
+				</section>
+				<section>
+						<h2>Actions</h2>
+						<ul>
+							<li>Javascript object with type property</li>
+							<li>
+								<pre>
+									<code>
+{type:"actionName",data1:"data1Value", data2: "data2Value"}
+									</code>
+								</pre>
+							</li>
+							<li>
+									<pre>
+										<code>
+let myAction = (parm1, parm2) => ({type:"actionName",parm1, parm2});
+										</code>
+									</pre>
+								</li>
+						</ul>
+				</section>
+				<section>
+					<h2>Reducer</h2>
+					<pre>
+						<code>
+function reducer(state =initialState, action) {
+	if (action.type==="myActionName") {
+		// do not mutate original state
+		// return update state
+		return Object.assign({}, state, {key1: action.key1, key2: action.key2});
+	}
+	return state
+	}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Store</h2>
+					<pre>
+						<code>
+import { createStore } from 'redux'
+import { action1, action 2} from './actions'
+
+const store = createStore(reducers)
+const unsubscribe = store.subscribe(() => console.log(store.getState()))
+store.dispatch(action1(parm1,parm2));
+store.dispatch(action2(parm1,parm2));
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Lets look at an actual example (Redux-Example1 )</h2>
+				</section>
+				<section>
+					<h2>Redux exercise</h2>
+					<p>Add actions and reducers to remove and update items</p>
+					<p>Values can all be hard coded no ui</p>
+				</section>
+				<section>
+					<h2>Connecting redux to React</h2>
+					<pre>
+						<code>
+import { Provider, connect } from 'react-redux'
+&lt;Provider store={store}&gt;
+	&lt;ConnectedComponet&gt;
+&lt;Provider &gt;
+						</code>
+					</pre>
+				</section>
+				<section>
+						<h2>Connecting redux to React</h2>
+						<pre>
+							<code>
+let ConnectedComponet = ({prop1, prop2}) => {
+	return &lt;div&gt;my content &lt;div&gt;
+}
+
+export default connect(mapStateToPropsFunction, mapDispatchToProps)(ConnectedComponet);
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Lets see an example (redux-example2)</h2>
+					</section>
+					<section>
+						<h2>Extend this application</h2>
+					</section>
+					<section>
+						<h1>Break</h1>
+					</section>
+					<section>
+						<h2>React router</h2>
+					</section>
 			</div>
 		</div>
 
